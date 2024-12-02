@@ -1,4 +1,3 @@
-<!-- HomePage.vue -->
 <template>
   <div class="home">
     <el-container>
@@ -6,9 +5,9 @@
         <TopBar/>
       </el-header>
       <el-container>
-        <SidebarMenu />
+        <SidebarMenu/>
         <el-container>
-          <el-main>Main</el-main>
+          <el-main>Pie</el-main>
           <el-footer>Footer</el-footer>
         </el-container>
       </el-container>
@@ -21,7 +20,7 @@ import TopBar from '../components/TopBar.vue'; // 确保路径正确
 import SidebarMenu from '../components/SidebarMenu.vue'; // 确保路径正确
 
 export default {
-  name: 'HomePage',
+  name: 'PiePage',
   components: {
     TopBar,
     SidebarMenu

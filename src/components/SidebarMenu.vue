@@ -1,36 +1,25 @@
 <template>
   <el-menu
       default-active="1"
-      @open="handleOpen"
-      @close="handleClose"
+      class="custom-el-menu"
   >
-    <el-sub-menu index="1">
-      <template #title>
-        <el-icon>
-          <Location/>
-        </el-icon>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item index="1-1">
-        <template #title>
-          <el-icon>
-            <Location/>
-          </el-icon>
-          <span>item four</span>
-        </template>
-      </el-menu-item>
-    </el-sub-menu>
-    <el-menu-item index="2">
+    <el-menu-item index="1" @click="toPhoto">
+      <el-icon>
+        <Location/>
+      </el-icon>
+      <span>相册</span>
+    </el-menu-item>
+    <el-menu-item index="2" @click="toCard">
       <el-icon>
         <IconMenu/>
       </el-icon>
-      <span>Navigator Two</span>
+      <span>画饼</span>
     </el-menu-item>
-    <el-menu-item index="3">
+    <el-menu-item index="3" @click="toPie">
       <el-icon>
         <Setting/>
       </el-icon>
-      <span>Navigator Four</span>
+      <span>卡片</span>
     </el-menu-item>
   </el-menu>
 </template>
@@ -41,12 +30,18 @@ import {Location, Menu as IconMenu, Setting} from '@element-plus/icons-vue';
 export default {
   name: "SidebarMenu", // 使用多词名称
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    toPhoto() {
+      this.$router.push("/photo");
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+
+    toCard() {
+      this.$router.push("/card");
     },
+
+    toPie() {
+      this.$router.push("/pie");
+    }
+
   },
   components: {
     Location,
@@ -57,8 +52,8 @@ export default {
 </script>
 
 <style scoped>
-.el-menu {
-  margin: 0;
-  padding: 0;
+.custom-el-menu {
+  width: 200px;
+  align-items: center;
 }
 </style>

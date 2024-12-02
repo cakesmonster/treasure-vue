@@ -1,17 +1,21 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import Home from '../views/HomePage.vue';  // 确保路径正确
 
 const routes = [
     {
-        path: '/',
-        name: 'Home',
-        component: Home
+        path: '/photo',
+        name: 'Photo',
+        component: () => import('../views/PhotoAlbumPage.vue')
     },
     {
-        path: '/profile',
-        name: 'Profile',
-        component: () => import('../views/ProfilePage.vue')
-    }
+        path: '/card',
+        name: 'Card',
+        component: () => import('../views/CardPage.vue')
+    },
+    {
+        path: '/pie',
+        name: 'Pie',
+        component: () => import('../views/PieCard.vue')
+    },
 ];
 
 const router = createRouter({
