@@ -1,5 +1,5 @@
 <template>
-  <el-header height="60px" class="topbar">
+  <div class="topbar">
     <div class="topbar-left">
       <router-link to="/" class="home-link">Treasure</router-link>
     </div>
@@ -8,10 +8,10 @@
         <span class="el-dropdown-link custom-dropdown-link">
           <el-avatar
               size="40"
-              src=""
+              src="https://avatars.githubusercontent.com/u/42994120?v=4&size=64"
               shape="circle"
           ></el-avatar>
-          <span class="username">Username</span>
+          <span class="username">cakemonster</span>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
@@ -21,7 +21,7 @@
         </template>
       </el-dropdown>
     </div>
-  </el-header>
+  </div>
 </template>
 
 <script>
@@ -43,6 +43,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  height: 60px;
   padding: 0 40px;
   background-color: #409EFF;
   color: #fff;

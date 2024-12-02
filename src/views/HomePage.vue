@@ -1,4 +1,4 @@
-<!-- Home.vue -->
+<!-- HomePage.vue -->
 <template>
   <div class="home">
     <el-container>
@@ -6,9 +6,7 @@
         <TopBar/>
       </el-header>
       <el-container>
-        <el-aside width="200px">
-          <AppSidebar/>
-        </el-aside>
+        <SidebarMenu />
         <el-container>
           <el-main>Main</el-main>
           <el-footer>Footer</el-footer>
@@ -20,13 +18,13 @@
 
 <script>
 import TopBar from '../components/TopBar.vue'; // 确保路径正确
-import AppSidebar from '../components/AppSidebar.vue'; // 确保路径正确
+import SidebarMenu from '../components/SidebarMenu.vue'; // 确保路径正确
 
 export default {
   name: 'HomePage',
   components: {
     TopBar,
-    AppSidebar
+    SidebarMenu
   }
 }
 </script>
@@ -44,7 +42,8 @@ export default {
 }
 
 .el-aside {
-  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
 .el-main {

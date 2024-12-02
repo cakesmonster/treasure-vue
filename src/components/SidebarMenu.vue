@@ -1,39 +1,64 @@
-<!-- src/components/AppSidebar.vue -->
 <template>
   <el-menu
-      class="el-menu-vertical-demo"
-      router
       default-active="1"
-      background-color="#f4f4f4"
-      text-color="#333"
-      active-text-color="#409eff"
+      @open="handleOpen"
+      @close="handleClose"
   >
-    <el-menu-item index="/">
+    <el-sub-menu index="1">
       <template #title>
-        <i class="el-icon-house"></i>
-        <span>Home</span>
+        <el-icon>
+          <Location/>
+        </el-icon>
+        <span>Navigator One</span>
       </template>
+      <el-menu-item index="1-1">
+        <template #title>
+          <el-icon>
+            <Location/>
+          </el-icon>
+          <span>item four</span>
+        </template>
+      </el-menu-item>
+    </el-sub-menu>
+    <el-menu-item index="2">
+      <el-icon>
+        <IconMenu/>
+      </el-icon>
+      <span>Navigator Two</span>
     </el-menu-item>
-    <el-menu-item index="/profile">
-      <template #title>
-        <i class="el-icon-user"></i>
-        <span>Profile</span>
-      </template>
+    <el-menu-item index="3">
+      <el-icon>
+        <Setting/>
+      </el-icon>
+      <span>Navigator Four</span>
     </el-menu-item>
-    <!-- 你可以添加更多菜单项 -->
   </el-menu>
 </template>
 
 <script>
+import {Location, Menu as IconMenu, Setting} from '@element-plus/icons-vue';
+
 export default {
-  name: "AppSidebar" // 使用多词名称
+  name: "SidebarMenu", // 使用多词名称
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+  },
+  components: {
+    Location,
+    IconMenu,
+    Setting,
+  },
 }
 </script>
 
 <style scoped>
-.el-menu-vertical-demo {
-  width: 200px;
-  height: 100vh;
-  background-color: #f4f4f4;
+.el-menu {
+  margin: 0;
+  padding: 0;
 }
 </style>
