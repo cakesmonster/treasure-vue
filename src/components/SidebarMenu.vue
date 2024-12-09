@@ -9,13 +9,13 @@
       </el-icon>
       <span>相册</span>
     </el-menu-item>
-    <el-menu-item index="2" @click="toCard">
+    <el-menu-item index="2" @click="toPie">
       <el-icon>
         <IconMenu/>
       </el-icon>
       <span>画饼</span>
     </el-menu-item>
-    <el-menu-item index="3" @click="toPie">
+    <el-menu-item index="3" @click="toCard">
       <el-icon>
         <Setting/>
       </el-icon>
